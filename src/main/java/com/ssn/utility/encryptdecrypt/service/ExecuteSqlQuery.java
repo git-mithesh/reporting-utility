@@ -26,7 +26,7 @@ public class ExecuteSqlQuery extends JdbcDaoSupport{
 	}
 	public String runQuery(String sql, User user) throws FileNotFoundException, MailException, MessagingException {
 		
-		 FileOutputStream os=new FileOutputStream("/Users/mitheshjain/Documents/"+user.getName());
+		 FileOutputStream os=new FileOutputStream("/var/lib/jenkins/workspace/reporting-utility/target/"+user.getName());
 		getJdbcTemplate().query(sql,new StreamingCsvResultSetExtractor(os));
 		emailService.sendEmailWithAttachment(user);
 		return "success"; 

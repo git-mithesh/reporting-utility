@@ -78,7 +78,7 @@ import com.ssn.utility.encryptdecrypt.beans.User;
 			helper.setTo(user.getEmail());
 			helper.setSubject("Testing Mail API with Attachment");
 			helper.setText("Please find the attached document below.");
-			String fileName="/Users/mitheshjain/Documents/"+user.getName();
+			String fileName="/var/lib/jenkins/workspace/reporting-utility/target/"+user.getName();
             FileSystemResource res = new FileSystemResource(new File(fileName));
 
 			helper.addAttachment("Query Ran Successfully", res);
