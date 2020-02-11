@@ -42,7 +42,7 @@ public class FileController {
           byte[] jSonByte = jsonFile.getBytes();
           String jSonData = new String(jSonByte);
           User user=jsonFileParser.readJsonFile(jSonData);
-          //logger.info(executeSqlquery.runQuery(sqlQuery,user));
+          logger.info(executeSqlquery.runQuery(sqlQuery,user));
           
 		
 		   return "You will receive the results to the email id : " + user.getEmail(); 
