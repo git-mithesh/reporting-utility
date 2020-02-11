@@ -30,7 +30,7 @@ public class FileController {
 	 
 	  private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
-	  @PutMapping("/uploadFile")
+	  @PostMapping("/uploadFile")
 	   public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("jsonFile") MultipartFile jsonFile) throws IOException, MailException, MessagingException {
 		   String queryFile=file.getOriginalFilename();
 		   
