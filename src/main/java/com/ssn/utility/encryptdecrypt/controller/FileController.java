@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +30,7 @@ public class FileController {
 	 
 	  private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
-	  @GetMapping("/uploadFile")
+	  @PutMapping("/uploadFile")
 	   public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("jsonFile") MultipartFile jsonFile) throws IOException, MailException, MessagingException {
 		   String queryFile=file.getOriginalFilename();
 		   
