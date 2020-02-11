@@ -64,6 +64,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		    <finalName>docker-reporting-utility</finalName>
+
 	</build>
 
 </project>
