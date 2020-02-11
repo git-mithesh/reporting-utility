@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,7 +29,7 @@ public class FileController {
 	 
 	  private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
-	  @PostMapping("/uploadFile")
+	  @GetMapping("/uploadFile")
 	   public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("jsonFile") MultipartFile jsonFile) throws IOException, MailException, MessagingException {
 		   String queryFile=file.getOriginalFilename();
 		   
@@ -40,7 +41,7 @@ public class FileController {
           byte[] jSonByte = jsonFile.getBytes();
           String jSonData = new String(jSonByte);
           User user=jsonFileParser.readJsonFile(jSonData);
-          logger.info(executeSqlquery.runQuery(sqlQuery,user));
+          //logger.info(executeSqlquery.runQuery(sqlQuery,user));
           
 		
 		   return "You will receive the results to the email id : " + user.getEmail(); 
