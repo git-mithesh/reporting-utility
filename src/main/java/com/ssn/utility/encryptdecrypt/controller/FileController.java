@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +19,7 @@ import com.ssn.utility.encryptdecrypt.service.EmailService;
 import com.ssn.utility.encryptdecrypt.service.ExecuteSqlQuery;
 import com.ssn.utility.encryptdecrypt.service.JSonFileParser;
 @RestController
-@RequestMapping(value="/reporting" , method=RequestMethod.POST)
+@RequestMapping("/reporting")
 public class FileController {
 	 @Autowired
 	  private ExecuteSqlQuery executeSqlquery;
